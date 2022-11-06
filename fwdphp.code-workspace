@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../fwdphp"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "javascript"
+	}
+}

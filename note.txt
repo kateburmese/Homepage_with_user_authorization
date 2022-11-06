@@ -1,0 +1,77 @@
+user table
+-id
+-name
+-email
+-password
+-created_at
+
+post table
+-id
+-title
+-description
+-created_at
+
+
+
+Note
+=====
+
+config
+--------
+//username
+define ('MYSQL_USER','root');
+
+//password
+define('MYSQL_PASSWORD','');
+
+//host
+define('MYSQL_HOST','localhost');
+
+//database
+define('MYSQL_DATABASE','tablename_in_sql');
+
+// error show
+$pdoOptions = array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+);
+
+// connection code
+$pdo = new PDO(
+    'mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DATABASE,
+    MYSQL_USER,MYSQL_PASSWORD,
+    
+);
+
+
+
+query
+------
+//query prepare
+$something = 'code';
+$something2 = $pdo->prepare($something);
+
+// bind statement
+$something2 ->bindValue();
+                                    //bind & execute
+                                    $def= $abc->execute(
+                                        array(':title'=>$title, ':desc'=>$desc)
+                                    );
+//execute statement
+$something2->execute();
+
+//fetch
+$abc-> fetch(PDO::FETCH_ASSOC);
+(OR)
+$abc-> fetchAll();
+
+
+
+passwordhash
+-------------
+$abc= password_hash($variable,PASSWORD_BCRYPT);
+
+change current-time-stamp format to date
+========================================
+
+date('d-m-Y',strtotime($-----));
+
